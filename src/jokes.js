@@ -32,11 +32,20 @@ class Jokes extends Component {
     render () {
         const { joke, jokeId } = this.state;
         return (
-            <div className="container">
-                <p className="container-title">joke #{jokeId}</p>
-                <p className="container-content">{ joke }</p>
-                <p className="container-btn" onClick={this.randomJoke}>Get random joke</p>
+            <div className="wrapper">
+                <div className="container">
+                    <p className="container-title">joke #{jokeId}</p>
+                    <p className="container-content">{ joke }</p>
+                    <ul className="container-btns">
+                        <li className="container-btn__random" onClick={this.randomJoke}>Get random joke</li>
+                        <li>Copy link to clipboard</li>
+                    </ul>
+                </div>
+                <footer>
+                    <a href="https://github.com/yrguba/quotes">github</a>
+                </footer>
             </div>
+            
         );
     }
 }
