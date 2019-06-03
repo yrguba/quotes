@@ -2,5 +2,7 @@
 
 ### Install project
 
-`$ yarn install`
-`$ yarn start`
+```
+$ yarn install
+$ yarn start
+```
