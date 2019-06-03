@@ -39,6 +39,7 @@ footer a {
 .container-btns {
   display: flex;
   justify-content: space-around;
+  padding-left: 0;
 }
 .container-btns li {
   width: 40%;
@@ -57,4 +58,15 @@ footer a {
 .container-title {
   color: #999;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin-left: 5%;
+    
+  }
+  .container-content {
+    font-size: 2rem;
+  }
 }
