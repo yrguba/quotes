@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import github_icon from './icons/github-logo.svg';
 
 class Jokes extends Component {
     constructor(props) {
@@ -53,7 +54,9 @@ class Jokes extends Component {
                     </ul>
                 </div>
                 <footer>
-                    <a href="https://github.com/yrguba/quotes">github</a>
+                    <a href="https://github.com/yrguba/quotes" target="_blank">
+                        <img src={github_icon}/>
+                    </a>
                 </footer>
             </div>
             
