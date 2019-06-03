@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import github_icon from './icons/github-logo.svg';
 
+const URL_API = 'https://api.icndb.com/jokes/';
+const URL_API_RANDOM = 'https://api.icndb.com/jokes/random/';
+
 class Jokes extends Component {
     constructor(props) {
         super(props);
@@ -16,13 +19,13 @@ class Jokes extends Component {
   
     componentDidMount() {
         const jokeId = this.state.jokeId;
-        fetch('https://api.icndb.com/jokes/' + jokeId)
+        fetch(URL_API + jokeId)
             .then(response => response.json())
             .then(data => this.setState({ joke: data.value.joke }));
     }
 
     randomJoke = () => {
-        fetch('https://api.icndb.com/jokes/random/')
+        fetch(URL_API_RANDOM)
             .then(response => response.json())
             .then(data => {
                 this.setState({ 
