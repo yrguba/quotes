@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 class Jokes extends Component {
     constructor(props) {
@@ -7,6 +8,8 @@ class Jokes extends Component {
         this.state = {
             jokeId: this.props.match.params.id,
             joke: null,
+            value: window.location,
+            copied: false
         };
     }
   
@@ -28,6 +31,10 @@ class Jokes extends Component {
                 this.props.history.push('/jokes/' + data.value.id);
             });
     }
+
+    onCopy = () => {
+        this.setState({copied: true});
+    }
   
     render () {
         const { joke, jokeId } = this.state;
@@ -38,7 +45,11 @@ class Jokes extends Component {
                     <p className="container-content">{ joke }</p>
                     <ul className="container-btns">
                         <li className="container-btn__random" onClick={this.randomJoke}>Get random joke</li>
-                        <li>Copy link to clipboard</li>
+                        <li>
+                            <CopyToClipboard onCopy={this.onCopy} text={this.state.value}>
+                            <span>Copy link to clipboard</span>
+                            </CopyToClipboard>
+                        </li>
                     </ul>
                 </div>
                 <footer>
